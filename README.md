@@ -42,6 +42,27 @@ That partition is intentional. It should let a downstream wiki pull baseline imp
 
 Per-wiki customization should live primarily in `CLAUDE.md`, not as ad hoc downstream edits to baseline-owned files.
 
+### Creating A Wiki Instance
+
+```bash
+mkdir my-wiki && cd my-wiki
+git init
+git remote add upstream <autowiki-repo-url>
+git fetch upstream
+git merge upstream/main
+```
+
+This gives you the baseline files. Then run `init` (via the orchestrator LLM) to scaffold the wiki-owned files (`raw/`, `pages/`, `index.md`, `log.md`, `CLAUDE.md`).
+
+To pull baseline updates later:
+
+```bash
+git fetch upstream
+git merge upstream/main
+```
+
+This merges cleanly because baseline-owned and wiki-owned files are disjoint.
+
 ## Current V1 Scope
 
 The first workflow surface is intentionally small:
