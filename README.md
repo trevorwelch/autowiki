@@ -100,8 +100,6 @@ The intended top-level shape is:
 
 ## Status
 
-AutoWiki is being built from first principles after a more code-heavy earlier attempt drifted away from the core idea.
-
 The immediate goal is to prove the minimum loop:
 
 1. initialize a wiki instance
